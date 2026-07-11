@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rohan Payyavula — rohan-os</title>
+<meta name="description" content="Rohan Payyavula — Computer Science alumnus @ George Mason University | Software Engineer | AI/ML, Embedded Systems & Data | Python, C/C++, SQL, React/TypeScript">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ BOOT SCREEN ============ -->
+<div id="boot">
+  <pre id="boot-text"></pre>
+  <div id="boot-skip">press any key or click to skip</div>
+</div>
+
+<!-- ============ DESKTOP ============ -->
+<div id="desktop" class="hidden">
+
+  <!-- Menu bar -->
+  <div id="menubar">
+    <div class="mb-left">
+      <span class="mb-logo">⌘</span>
+      <span class="mb-title">rohan-os</span>
+      <span class="mb-item" data-open="about">About</span>
+      <span class="mb-item" data-open="projects">Projects</span>
+      <span class="mb-item" data-open="contact">Contact</span>
+    </div>
+    <div class="mb-right">
+      <span id="mb-status">● online</span>
+      <span id="mb-clock">--:--</span>
+    </div>
+  </div>
+
+  <!-- Desktop icons -->
+  <div id="icons">
+    <button class="icon" data-open="about">
+      <span class="icon-glyph">👤</span><span class="icon-label">about.sh</span>
+    </button>
+    <button class="icon" data-open="projects">
+      <span class="icon-glyph">📁</span><span class="icon-label">projects/</span>
+    </button>
+    <button class="icon" data-open="experience">
+      <span class="icon-glyph">💼</span><span class="icon-label">experience.log</span>
+    </button>
+    <button class="icon" data-open="skills">
+      <span class="icon-glyph">⚙️</span><span class="icon-label">skills.json</span>
+    </button>
+    <button class="icon" data-open="education">
+      <span class="icon-glyph">🎓</span><span class="icon-label">education.md</span>
+    </button>
+    <button class="icon" data-open="terminal">
+      <span class="icon-glyph">🖥️</span><span class="icon-label">terminal</span>
+    </button>
+    <button class="icon" data-open="contact">
+      <span class="icon-glyph">📡</span><span class="icon-label">contact.sh</span>
+    </button>
+  </div>
+
+  <!-- Hero text on desktop -->
+  <div id="hero">
+    <div class="hero-line1">Rohan Payyavula</div>
+    <div class="hero-line2">$ whoami<span class="cursor">▊</span></div>
+    <div class="hero-line3">CS Alumnus @ George Mason · Software Engineer · AI/ML, Embedded Systems &amp; Data</div>
+  </div>
+
+  <!-- Windows layer -->
+  <div id="windows"></div>
+
+  <!-- Dock / taskbar -->
+  <div id="dock"><div id="dock-items"></div></div>
+</div>
+
+<!-- ============ WINDOW CONTENT TEMPLATES ============ -->
+<template id="tpl-about">
+  <div class="app-body">
+    <pre class="ascii">
+ ██████╗ ██████╗
+ ██╔══██╗██╔══██╗
+ ██████╔╝██████╔╝
+ ██╔══██╗██╔═══╝
+ ██║  ██║██║
+ ╚═╝  ╚═╝╚═╝</pre>
+    <p class="prompt-line"><span class="p-green">rohan@rohan-os</span>:<span class="p-blue">~</span>$ cat about.txt</p>
+    <p>Hey, I'm <strong>Rohan Payyavula</strong> — a Computer Science alumnus of
+    <strong>George Mason University</strong> with 1.5 years of internship experience across
+    <strong>software engineering</strong>, <strong>AI/ML</strong>, data automation, full-stack
+    development, and <strong>embedded/edge systems</strong>.</p>
+    <p>I've built <strong>RAG-based healthcare platforms</strong>, backend APIs, cloud workflows,
+    and AI-powered automation tools — including an AI chatbot that cut manual onboarding time
+    by <strong>83%</strong> and data workflows that reduced manual processing by <strong>90%</strong>.
+    I also taught Full Stack Web Development (CS 395) at GMU as a student instructor.</p>
+    <ul class="fact-list">
+      <li><span class="k">location</span> Chantilly, VA</li>
+      <li><span class="k">focus</span> SWE · AI/ML · backend · data · embedded/edge</li>
+      <li><span class="k">status</span> B.S. Computer Science, GMU (2022 – 2026)</li>
+      <li><span class="k">seeking</span> software engineering &amp; AI/ML engineering roles</li>
+    </ul>
+    <p class="prompt-line"><span class="p-green">rohan@rohan-os</span>:<span class="p-blue">~</span>$ <span class="cursor">▊</span></p>
+  </div>
+</template>
+
+<template id="tpl-projects">
+  <div class="app-body">
+    <p class="prompt-line"><span class="p-green">rohan@rohan-os</span>:<span class="p-blue">~/projects</span>$ ls -la</p>
+    <div class="project">
+      <div class="proj-head"><span class="proj-name">rag-healthcare-platform/</span><span class="proj-date">Oct – Dec 2025</span></div>
+      <p>RAG-based healthcare platform for patient guidance and information retrieval, with a microservices risk-analysis engine — built at REAN Foundation.</p>
+      <div class="tags"><span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>AWS Lambda</span><span>Docker</span><span>Kubernetes</span></div>
+    </div>
+    <div class="project">
+      <div class="proj-head"><span class="proj-name">face-recognition-access-control/</span><span class="proj-date">Feb – Apr 2025</span></div>
+      <p>Full-stack access control system using live face recognition — camera in, door decision out.</p>
+      <div class="tags"><span>React</span><span>Django</span><span>PostgreSQL</span><span>OpenCV</span><span>Docker</span></div>
+    </div>
+    <div class="project">
+      <div class="proj-head"><span class="proj-name">root-cause-analysis-dashboard/</span><span class="proj-date">Jan – May 2025</span></div>
+      <p>AI dashboard that ingests incident data and produces LLM-driven root cause analysis for engineering teams.</p>
+      <div class="tags"><span>React</span><span>FastAPI</span><span>PostgreSQL</span><span>GPT-4</span><span>LangChain</span></div>
+    </div>
+    <div class="project">
+      <div class="proj-head"><span class="proj-name">uncompligrow/</span><span class="proj-date">Apr 2025</span>
+        <a class="proj-link" href="https://github.com/Rohan-Payyavula/UncompliGrow" target="_blank" rel="noopener">[github]</a></div>
+      <p>Solo-built MERN web app helping growers stay compliant without the paperwork headache.</p>
+      <div class="tags"><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Tailwind</span></div>
+    </div>
+    <div class="project">
+      <div class="proj-head"><span class="proj-name">webvyson/</span><span class="proj-date">Jan – Apr 2025</span></div>
+      <p>Desktop web browser built from scratch in a 4-person team for CS 321 — tabs, history, bookmarks, the works.</p>
+      <div class="tags"><span>Java</span><span>JavaFX</span></div>
+    </div>
+    <div class="project">
+      <div class="proj-head"><span class="proj-name">northrop-onboarding-bot/</span><span class="proj-date">Sep – Dec 2024</span></div>
+      <p>AI chatbot built as a consultant for Northrop Grumman — cut manual onboarding tasks by <strong>83%</strong>.</p>
+      <div class="tags"><span>Python</span><span>LangChain</span><span>SQL</span></div>
+    </div>
+    <p class="prompt-line"><span class="p-green">rohan@rohan-os</span>:<span class="p-blue">~/projects</span>$ <span class="cursor">▊</span></p>
+  </div>
+</template>
+
+<template id="tpl-experience">
+  <div class="app-body">
+    <p class="prompt-line"><span class="p-green">rohan@rohan-os</span>:<span class="p-blue">~</span>$ tail -f experience.log</p>
+    <div class="xp">
+      <div class="xp-head"><span class="xp-role">Software Engineer Intern</span> · Kery ZK LLC</div>
+      <div class="xp-meta">Feb 2026 – Jun 2026 · Virginia</div>
+      <p>Backend development, system design, and technical implementation for emerging technology products — spanning product development, cybersecurity, and hardware/software integration in a startup environment.</p>
+    </div>
+    <div class="xp">
+      <div class="xp-head"><span class="xp-role">AI Developer Intern</span> · REAN Foundation</div>
+      <div class="xp-meta">Oct 2025 – Dec 2025</div>
+      <p>Built a RAG-based healthcare platform (Python, FastAPI, PostgreSQL, AWS Lambda) for patient guidance, a microservices risk-analysis engine with Docker, and agent-driven health-worker tools with React, Flask, and Kubernetes.</p>
+    </div>
+    <div class="xp">
+      <div class="xp-head"><span class="xp-role">Student Instructor — CS 395</span> · George Mason University</div>
+      <div class="xp-meta">Jan 2025 – Dec 2025 · Fairfax, VA</div>
+      <p>Taught Full Stack Web Development to 20+ students — lectures, technical demos, debugging help, and project-based learning across frontend, backend, APIs, and databases.</p>
+    </div>
+    <div class="xp">
+      <div class="xp-head"><span class="xp-role">Application Development Intern</span> · Eera Technology</div>
+      <div class="xp-meta">Jan 2025 – May 2025 · Chantilly, VA</div>
+      <p>Designed LLM-powered insight and appointment-scheduling systems, contributed to LLM root cause analysis, shipped Django backend features, and researched AI use cases in healthcare.</p>
+    </div>
+    <div class="xp">
+      <div class="xp-head"><span class="xp-role">Technical Consultant</span> · Northrop Grumman</div>
+      <div class="xp-meta">Sep 2024 – Dec 2024 · Falls Church, VA</div>
+      <p>Built an AI onboarding chatbot (Python, LangChain, SQL) with a PyQt5 desktop interface — reduced manual task time by 83%.</p>
+    </div>
+    <div class="xp">
+      <div class="xp-head"><span class="xp-role">Learning Assistant</span> · George Mason University</div>
+      <div class="xp-meta">Jan 2024 – Dec 2024 · Fairfax, VA</div>
+      <p>Supported 200+ students in Calculus II and III through help-room sessions and individualized problem-solving.</p>
+    </div>
+    <div class="xp">
+      <div class="xp-head"><span class="xp-role">Consultant</span> · Britepaths</div>
+      <div class="xp-meta">Jan 2024 – May 2024 · Fairfax, VA</div>
+      <p>Led a team producing marketing videos for a community-support nonprofit — three storyboards, two finished videos, on schedule.</p>
+    </div>
+    <p class="prompt-line"><span class="p-green">rohan@rohan-os</span>:<span class="p-blue">~</span>$ <span class="cursor">▊</span></p>
+  </div>
+</template>
+
+<template id="tpl-skills">
+  <div class="app-body">
+    <p class="prompt-line"><span class="p-green">rohan@rohan-os</span>:<span class="p-blue">~</span>$ cat skills.json | jq .</p>
+<pre class="json">{
+  <span class="j-key">"languages"</span>: [<span class="j-str">"Python"</span>, <span class="j-str">"C/C++"</span>, <span class="j-str">"SQL"</span>, <span class="j-str">"JavaScript"</span>, <span class="j-str">"TypeScript"</span>, <span class="j-str">"Java"</span>],
+  <span class="j-key">"frameworks"</span>: [<span class="j-str">"React"</span>, <span class="j-str">"FastAPI"</span>, <span class="j-str">"Flask"</span>, <span class="j-str">"Django"</span>, <span class="j-str">"LangChain"</span>],
+  <span class="j-key">"ai_ml"</span>: [<span class="j-str">"PyTorch"</span>, <span class="j-str">"TensorFlow"</span>, <span class="j-str">"scikit-learn"</span>, <span class="j-str">"RAG / LLM systems"</span>, <span class="j-str">"computer vision"</span>],
+  <span class="j-key">"data"</span>: [<span class="j-str">"Pandas"</span>, <span class="j-str">"NumPy"</span>, <span class="j-str">"PostgreSQL"</span>, <span class="j-str">"data analysis"</span>],
+  <span class="j-key">"cloud_infra"</span>: [<span class="j-str">"AWS"</span>, <span class="j-str">"Docker"</span>, <span class="j-str">"Kubernetes"</span>, <span class="j-str">"Git"</span>],
+  <span class="j-key">"systems"</span>: [<span class="j-str">"embedded/edge systems"</span>, <span class="j-str">"hardware/software integration"</span>]
+}</pre>
+    <div class="bars">
+      <div class="bar-row"><span class="bar-label">Python</span><div class="bar"><div class="bar-fill" style="--w:92%"></div></div></div>
+      <div class="bar-row"><span class="bar-label">AI/ML · RAG · LLMs</span><div class="bar"><div class="bar-fill" style="--w:88%"></div></div></div>
+      <div class="bar-row"><span class="bar-label">JavaScript / TS · React</span><div class="bar"><div class="bar-fill" style="--w:85%"></div></div></div>
+      <div class="bar-row"><span class="bar-label">FastAPI / Flask / Django</span><div class="bar"><div class="bar-fill" style="--w:84%"></div></div></div>
+      <div class="bar-row"><span class="bar-label">SQL / PostgreSQL</span><div class="bar"><div class="bar-fill" style="--w:82%"></div></div></div>
+      <div class="bar-row"><span class="bar-label">AWS / Docker / K8s</span><div class="bar"><div class="bar-fill" style="--w:78%"></div></div></div>
+      <div class="bar-row"><span class="bar-label">C/C++ · Embedded</span><div class="bar"><div class="bar-fill" style="--w:74%"></div></div></div>
+    </div>
+    <p class="prompt-line"><span class="p-green">rohan@rohan-os</span>:<span class="p-blue">~</span>$ <span class="cursor">▊</span></p>
+  </div>
+</template>
+
+<template id="tpl-education">
+  <div class="app-body">
+    <p class="prompt-line"><span class="p-green">rohan@rohan-os</span>:<span class="p-blue">~</span>$ glow education.md</p>
+    <div class="xp">
+      <div class="xp-head"><span class="xp-role">B.S. Computer Science</span> · George Mason University</div>
+      <div class="xp-meta">Aug 2022 – May 2026 · Fairfax, VA</div>
+      <p>Coursework across systems, AI/ML, and web development. Taught CS 395 (Full Stack Web Development) as a student instructor and served as a Learning Assistant for Calculus II/III.</p>
+    </div>
+    <div class="xp">
+      <div class="xp-head"><span class="xp-role">High School Diploma</span> · Pace Junior Science College</div>
+      <div class="xp-meta">May 2020 – Apr 2022</div>
+    </div>
+    <p class="prompt-line"><span class="p-green">rohan@rohan-os</span>:<span class="p-blue">~</span>$ ls certifications/</p>
+    <ul class="fact-list">
+      <li><span class="k">cert</span> AWS Certified Cloud Practitioner</li>
+      <li><span class="k">cert</span> PCEP-30-02 — Certified Entry-Level Python Programmer</li>
+      <li><span class="k">cert</span> Unmanned Aerial Systems Prototyping — GMU</li>
+    </ul>
+    <p class="prompt-line"><span class="p-green">rohan@rohan-os</span>:<span class="p-blue">~</span>$ <span class="cursor">▊</span></p>
+  </div>
+</template>
+
+<template id="tpl-contact">
+  <div class="app-body">
+    <p class="prompt-line"><span class="p-green">rohan@rohan-os</span>:<span class="p-blue">~</span>$ ./contact.sh --all</p>
+    <ul class="fact-list contact-list">
+      <li><span class="k">email</span> <a href="mailto:rohan.payyavula.cs@gmail.com">rohan.payyavula.cs@gmail.com</a></li>
+      <li><span class="k">linkedin</span> <a href="https://www.linkedin.com/in/rohanpayyavula/" target="_blank" rel="noopener">linkedin.com/in/rohanpayyavula</a></li>
+      <li><span class="k">github</span> <a href="https://github.com/Rohan-Payyavula" target="_blank" rel="noopener">github.com/Rohan-Payyavula</a></li>
+      <li><span class="k">location</span> Chantilly, VA</li>
+    </ul>
+    <p class="hint"># Open to software engineering, AI/ML, backend, data, and embedded/edge roles.</p>
+    <p class="prompt-line"><span class="p-green">rohan@rohan-os</span>:<span class="p-blue">~</span>$ <span class="cursor">▊</span></p>
+  </div>
+</template>
+
+<template id="tpl-terminal">
+  <div class="app-body term-body">
+    <div class="term-out"></div>
+    <form class="term-input-row" autocomplete="off">
+      <span class="p-green">rohan@rohan-os</span>:<span class="p-blue">~</span>$&nbsp;
+      <input class="term-input" type="text" autocomplete="off" spellcheck="false" aria-label="terminal input">
+    </form>
+  </div>
+</template>
+
+<script src="app.js"></script>
+</body>
+</html>
